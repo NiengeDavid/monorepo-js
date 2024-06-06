@@ -1,0 +1,68 @@
+#NB: I did most of the folder and file creation, as well as file-population manually inside VsCode.
+
+# Step 1: Create a local git repository and a corresponding GitHub repository
+
+mkdir monorepo-js
+cd monorepo-js
+git init
+
+# Step 2: Create README.md, LICENSE, and .gitignore files and commit them
+
+git add README.md LICENSE .gitignore
+git commit -m "initial commit"
+
+# Step 3: Create the backend directory with an empty .gitkeep file inside and commit it
+
+git add backend/.gitkeep
+git commit -m "add empty backend directory"
+
+# Step 4: Connect local repository to remote repository on GitHub
+
+git remote add origin https://github.com/NiengeDavid/monorepo-js
+
+# Step 5: Push commits from the local repository to remote repository
+
+git push origin main
+
+# Step 6: Create a branch named "frontend-layout" and switch to it
+
+git checkout -b frontend-layout
+
+# Step 7: Create src/components and src/containers directories with .gitkeep files and commit them
+
+git add frontend/src/components/.gitkeep frontend/src/containers/.gitkeep
+git commit -m "chore: add components and containers directory to frontend"
+
+# Step 8: Create index.js file and commit it
+
+git add frontend/src/index.js
+git commit -m "add content dynamically to page via JavaScript"
+
+# Step 9: Push the "frontend-layout" branch to the remote repository
+
+git push origin frontend-layout
+
+# Step 10: Merge the "frontend-layout" branch into the "main" branch locally
+
+git checkout main
+git merge frontend-layout
+
+# Step 11: Create index.html file and commit it
+
+git add frontend/public/index.html
+git commit -m "add index.html file"
+
+# Step 12: Push the latest commits in the main branch to the remote repository
+
+git push origin main
+
+# Step 13: Create another branch based-off the main branch named "commands"
+
+git checkout -b commands
+
+
+# Step 14: Document git commands in git-commands.txt and Commit git-commands.txt file to the local "commands" branch and push it
+
+git add git-commands.txt
+git commit -m "document git commands in git-commands.txt"
+git push origin commands
